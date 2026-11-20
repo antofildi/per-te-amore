@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Per te ♥</title>
+<style>
+  body {
+    margin: 0;
+    background: radial-gradient(circle at center, #1a0b14 0%, #070306 100%);
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  pre {
+    font-size: clamp(9px, 2.6vw, 16px);
+    line-height: 1.15;
+    animation: vento 3.5s ease-in-out infinite;
+    transform-origin: bottom center;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.35);
+    user-select: none;
+  }
+  @keyframes vento {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2.5deg); }
+  }
+  .rosa { color: #ff69b4; }
+  .rosso { color: #ff2a5f; }
+  .giallo { color: #ffd700; }
+  .viola { color: #c77dff; }
+  .verde { color: #38b000; }
+  .fiocco { color: #ff007f; font-weight: bold; }
+  .dedica {
+    margin-top: 20px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: clamp(16px, 4.5vw, 22px);
+    color: #ffb3c6;
+    text-align: center;
+    padding: 0 20px;
+    opacity: 0;
+    animation: appare 2s ease forwards 0.8s;
+  }
+  @keyframes appare { to { opacity: 1; } }
+  .petalo {
+    position: absolute;
+    top: -10%;
+    color: #ff758f;
+    font-size: 14px;
+    animation: cadi linear infinite;
+    opacity: 0.7;
+  }
+  @keyframes cadi {
+    to { transform: translateY(110vh) rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<pre>
+              <span class="rosa">..---..</span>          <span class="rosso">.--.--.</span>
+            <span class="rosa">.'  _._  '.</span>      <span class="rosso">.'  _._  '.</span>
+           <span class="rosa">/   ( @ )   \</span>    <span class="rosso">/   ( @ )   \</span>
+   <span class="giallo">.---.</span>   <span class="rosa">\    '-'    /</span>    <span class="rosso">\    '-'    /</span>   <span class="viola">.---.</span>
+ <span class="giallo">.' .-. '.</span>  <span class="rosa">'.._____..'</span>      <span class="rosso">'.._____..'</span>  <span class="viola">.' .-. '.</span>
+<span class="giallo">/  ( * )  \</span>      <span class="verde">\   |</span>        <span class="verde">|   /</span>      <span class="viola">/  ( * )  \</span>
+<span class="giallo">\   '-'   /</span>  <span class="rosso">.--.</span><span class="verde">\  |</span>  <span class="rosa">.--.</span>  <span class="verde">|  /</span><span class="rosso">.--.</span>  <span class="viola">\   '-'   /</span>
+ <span class="giallo">'..___..'</span>  <span class="rosso">/ (@) \</span><span class="verde">\|</span><span class="rosa">/ (@) \</span><span class="verde">|/</span><span class="rosso"> (@) \</span>  <span class="viola">'..___..'</span>
+    <span class="verde">\  \</span>    <span class="rosso">\  _  /</span> <span class="rosa">\  _  /</span> <span class="rosso">\  _  /</span>    <span class="verde">/  /</span>
+ <span class="verde">.--.\  \</span>    <span class="rosso">'---'</span>   <span class="rosa">'---'</span>   <span class="rosso">'---'</span>    <span class="verde">/  /.--.</span>
+<span class="verde">(    )\  \</span>     <span class="verde">\     |     /</span>     <span class="verde">/  /(    )</span>
+ <span class="verde">'--'  \  \</span>     <span class="verde">\    |    /</span>     <span class="verde">/  /  '--'</span>
+        <span class="verde">\  \</span>     <span class="verde">\   |   /</span>     <span class="verde">/  /</span>
+         <span class="verde">\  \</span>     <span class="verde">\  |  /</span>     <span class="verde">/  /</span>
+          <span class="verde">\  \</span>     <span class="verde">\ | /</span>     <span class="verde">/  /</span>
+           .-'-------'-------'-.
+          (   <span class="fiocco">.-.       .-.</span>   )
+           '--<span class="fiocco">(   )-.-.(   )</span>--'
+              <span class="fiocco">'-' /   \ '-'</span>
+                 <span class="fiocco">/     \</span>
+             <span class="verde">___/   |   \___</span>
+               <span class="verde">/    |    \</span>
+              <span class="verde">/     |     \</span>
+</pre>
+
+<div class="dedica">Per te, fiori che non appassiscono mai ♥</div>
+
+<script>
+  for (let i = 0; i < 18; i++) {
+    let p = document.createElement('div');
+    p.className = 'petalo';
+    p.innerText = ['❀', '✿', '♥', '·'][i % 4];
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (4 + Math.random() * 5) + 's';
+    p.style.animationDelay = Math.random() * 5 + 's';
+    document.body.appendChild(p);
+  }
+</script>
+</body>
+</html>
